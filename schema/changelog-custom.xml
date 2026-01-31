@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+  logicalFilePath="changelog-custom">
+
+  <changeSet author="author" id="changelog-custom-1">
+    <createTable tableName="tc_trips">
+      <column name="id" type="INT" autoIncrement="true">
+        <constraints primaryKey="true" />
+      </column>
+      <column name="deviceid" type="INT">
+        <constraints nullable="false" />
+      </column>
+      <column name="driverid" type="INT" />
+      <column name="starttime" type="TIMESTAMP" />
+      <column name="endtime" type="TIMESTAMP" />
+      <column name="startodometer" type="DOUBLE" />
+      <column name="endodometer" type="DOUBLE" />
+      <column name="distance" type="DOUBLE" />
+      <column name="cost" type="DOUBLE" />
+      <column name="status" type="VARCHAR(128)" />
+      <column name="attributes" type="VARCHAR(4000)" />
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="tc_trips" baseColumnNames="deviceid" constraintName="fk_trips_deviceid" onDelete="CASCADE" referencedColumnNames="id" referencedTableName="tc_devices" />
+  </changeSet>
+
+</databaseChangeLog>

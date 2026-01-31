@@ -353,7 +353,7 @@ public final class Keys {
     public static final ConfigKey<String> SERVER_STATISTICS = new StringConfigKey(
             "server.statistics",
             List.of(KeyType.CONFIG),
-            "https://www.traccar.org/analytics/");
+            "");
 
     /**
      * Fuel drop threshold value. When fuel level drops from one position to another for more the value, an event is
@@ -1697,7 +1697,7 @@ public final class Keys {
     public static final ConfigKey<Boolean> GEOCODER_ENABLE = new BooleanConfigKey(
             "geocoder.enable",
             List.of(KeyType.CONFIG),
-            true);
+            false);
 
     /**
      * Reverse geocoder type. Check reverse geocoding documentation for more info.

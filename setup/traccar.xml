@@ -9,4 +9,7 @@
     <entry key='database.user'>sa</entry>
     <entry key='database.password'></entry>
 
+    <entry key='server.statistics'></entry>
+    <entry key='geocoder.enable'>false</entry>
+
 </properties>
